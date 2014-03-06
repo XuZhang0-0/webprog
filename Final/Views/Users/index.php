@@ -1,23 +1,21 @@
 
-<!--<pre>
-	<? print_r($model);?>
-</pre>-->
+
     <h2>
     	List of Users
     </h2>
     
-    <table class="table">
+    <table class="table table-striped table-bordered table-hover">
     	<thead>
     		<tr>
-    			<th>FirstName</th>
-    			<th>LastName</th>
+    			<th>First Name</th>
+    			<th>Last Name</th>
     			<th>Password</th>
-    			<th>fbid</th>
-    			<th>UserType</th>
+    			<th>fasebook id</th>
+    			<th>User Type</th>
     		</tr>
     	</thead>
     	<tbody>
-    		<? foreach($model as $row): ?>
+    		<? foreach ($model as $row): ?>
     			<tr>
     				<td><?=$row['Firstname']?></td>
     				<td><?=$row['LastName']?></td>
