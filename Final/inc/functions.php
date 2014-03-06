@@ -6,9 +6,11 @@
 	   
        $conn = mysqli_connect('localhost', 'zhangx5', $password, 'zhangx5_db');
 	   return $conn;
+	   
+	   echo(mysqli_connect_error($conn));
    }
    
-   function fetch_all(){
+   function fetch_all($sql){
        $conn = GetConnection();
        $results = $conn->query($sql);
 	   
