@@ -14,8 +14,9 @@
 			break;
 		default:
 			$model = Users::Get();
-			#if($action == null) $action = 'index';
-			#include __DIR__ . "/../Views/Users/$action.php";
+			
+			if($action == null) $action = 'index';
+			include __DIR__ . "/../Views/Users/$action.php";
 			if($view == null) $view = 'index';
 			
 	}
