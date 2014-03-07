@@ -69,5 +69,10 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <?
+        if(function_exists("JavaScripts")){
+        	JavaScripts();
+        }
+    ?>
   </body>
 </html>
