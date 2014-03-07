@@ -1,4 +1,5 @@
 
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/css/jquery.dataTables.min.css"></link>
 
     <h2>
     	List of Users
@@ -17,7 +18,7 @@
     	<tbody>
     		<? foreach ($model as $row): ?>
     			<tr>
-    				<td><?=$row['Firstname']?></td>
+    				<td><?=$row['FirstName']?></td>
     				<td><?=$row['LastName']?></td>
     				<td><?=$row['Password']?></td>
     				<td><?=$row['fbid']?></td>
@@ -26,4 +27,21 @@
     		
     		<? endforeach; ?>
     	</tbody>
+
     </table>
+    
+    <? function JavaScripts(){ ?>
+    	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.3/jquery.dataTables.min.js"></script>
+    	<script type="text/javascript">
+    	    $(function(){
+    	    	$(".table").dataTable();
+    	    })
+    		
+    	</script>
+    <?	} ?>
+    	
+    	
+    	
+    	
+    	
+    	
