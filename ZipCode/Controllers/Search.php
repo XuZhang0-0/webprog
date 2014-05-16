@@ -6,18 +6,15 @@
 	
 	@$view = $action = $_REQUEST['action'];
 	@$format = $_REQUEST['format'];
-	
-	
-
 
 	switch ($action){
-		case 'new':
-			$view = 'edit';
+		case 'search':
+			$model = Searching::Search($_REQUEST['q']);
 			break;
 
 		default:
 
-			$model = Search::Get();
+			$model = Searching::Get();
 			//print_r($model);
 			if($view == null) $view = 'Search';
 			

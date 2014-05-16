@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">-->
 
-    <title>Layout Page</title>
+    <title>Auto-Complete Text Box</title>
 
     <!-- Bootstrap core CSS -->
     <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -68,29 +68,40 @@
     <div class="container">
     	<form class="form-horizontal" role="form">
 			<div class="form-group">
-				<div class="component-wrapper demo-autocomplete" id="jquery-autocomplete,live-demo">
+				<form id="search">
 					<label for="about" class="control-label">Search by City Name:</label> 
-					<input class="form-control" id="autocomplete-countries" name="country" placeholder="Start typing the country name" type="text" />
-				</div>
+					<input class="form-control" id="city" name="city" placeholder="Start typing the country name" type="text" />
+				</form>
 			</div>
 			
 		</form>
-		<? print "test"?>
-		<? print_r($model)?>
-    </div><!-- /.container -->
+
+		<? print "111111111";?>
+    </div><!-- /.container  <? print_r($model)?> -->
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <?
-        if(function_exists("JavaScripts")){
-        	JavaScripts();
-        }
-    ?>
-    
+	<? function JavaScripts(){ ?>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.0.0/knockout-min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.2/typeahead.bundle.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#city").typeahead(null,{
+					displayKey: 'city',
+					source: function(query, cb){
+						$.get("./Search.php?action=search&format=json&q=" + query, null,null,'json')
+							.always(function(data){
+								cb(data.data);
+						})
+					}
+			});
+			
+			$(".navbar-collapse").append($("#cart-tmpl").html())
+		</script>
+    <? } ?>
   </body>
 </html>
 
