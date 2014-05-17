@@ -10,7 +10,8 @@
     <style type="text/css">
     	body table.table .highlighted td {
     		backgroud-color: #ffffaa;
-    	}    	
+    	}    
+    	
     </style>
     
     <? if(isset($_REQUEST['sub_action'])): ?>
@@ -20,7 +21,7 @@
 	    </div>
     <? endif; ?>
 
-    <a href="?action=new">Create New</a>
+    <a href="?action=new" class="cmd-new" ><button type="button" class="btn btn-info zx_margin10">Create New</button></a>
     
     <table class="table table-striped table-bordered table-hover">
     	<thead>
@@ -72,9 +73,13 @@
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->    
+	
+	
+	
+
     
     <? function JavaScripts(){ ?>
-    	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.3/jquery.dataTables.min.js"></script>
+    	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
     	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.4/jquery-ui.min.js"></script>
     	<script type="text/javascript">
     	    $(function(){
@@ -108,9 +113,11 @@
     	    		},'json')
     	    		
     	    	})
-    	    	$(".glyphicon-edit, .cmd-new").click(function(event){
+    	    	
+    	    	$(".glyphicon-edit .cmd-new").click(function(event){
 					var that = this;
 					event.preventDefault();
+					
 					$.get(that.href, { format: 'plain'}, function(data){
 						var $myModal = $("#myModal");
 						$(".modal-content", $myModal).html(data);

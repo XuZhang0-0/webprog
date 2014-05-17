@@ -14,9 +14,16 @@
 	    </style>
 	    <style>
 	    	header{margin:0;}
-	    	.margin_zx {margin-top : 20px !important; padding-top: 0}
+	    	
 	    	.margin0_zx {margin-bottom : 0 !important; padding-bottom: 0}
-	    	.bottom { text-align: center; line-height:100pxl; font-size: 16px; margin: 30px auto;}
+	    	.bottom { text-align: center; 
+	    			line-height:100pxl; 
+	    			font-size: 16px; 
+	    			margin: 30px auto;
+	    			position:fixed;_position:absolute;bottom:0;_bottom:auto;
+	    			}
+	    	.margin_zx {margin-top : 52px !important; padding-top: 0}
+	    	.margin_pill {margin-top : 14px !important; padding-top: 0}
 	    </style>
 	</head>
 
@@ -38,11 +45,11 @@
 				        <div class="collapse navbar-collapse">
 					        <ul class="nav navbar-nav">
 					            <li class="active"><a href="Products.php">Home</a></li>
+					            <li><a href="?action=list">Categories</a></li>
 					            <li><a href="#about">About</a></li>
 							    <li><a href="#contact">Contact</a></li>
 							    <li><a href="?action=search">Search</a></li>
-							    
-							    <li><a href="?action=login">Log In</a></li>
+
 
 					        </ul>
 				        </div><!--/.nav-collapse -->
@@ -51,46 +58,14 @@
 				
 
 		</header>
+	
 		
-		
-		
-		 <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide  margin_zx" data-ride="carousel" >
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="item active">
-          <img src="http://cs.newpaltz.edu/~zhangx5/spring2014/Final/Content/images/0001.jpg" alt="First slide">
-
-        </div>
-        <div class="item">
-          <img src="http://cs.newpaltz.edu/~zhangx5/spring2014/Final/Content/images/0002.jpg" alt="Second slide">
-      
-        </div>
-        <div class="item">
-          <img src="http://cs.newpaltz.edu/~zhangx5/spring2014/Final/Content/images/0003.jpg" alt="Third slide">
-
-        </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div><!-- /.carousel -->
-
-		
-		
-		
-		
-	    <div class="container">
+	    
 		    
 	   		<? include $view; ?>
 
 	
-		</div><!-- /.container -->
+		
 
 
 <!-- Bootstrap core JavaScript
@@ -106,6 +81,12 @@
 	     }
 		 
     ?>
-    <div class="bottom"><p>Handmade Shop - 2014</p></div>
+    <div class="clearfix"></div>
+    
+    <div id="footer margin_zx">
+      <div class="container margin_zx">
+        <p class="text-muted">Handmade Shop - 2014</p>
+      </div>
+    </div>
 </body>
 </html>

@@ -20,17 +20,17 @@
 	    </div>
     <? endif; ?>
 
-    <a href="?action=new" class="cmd-new">Create New</a>
+    <a href="?action=new" ><button type="button" class="btn btn-info zx_margin10">Create New</button></a>
     
     <table class="table table-striped table-bordered table-hover">
 		<thead>
 			<tr>
-				<th>Suplier_id</th>
-				<th>Product_Category_id</th>
+				<th>Suplier</th>
+				<th>Category</th>
 				<th>Name</th>
 				<th>Price</th>
 				<th>Picture_Url</th>
-				<th>actions</th>
+				<th>Actions</th>
 			</tr>
 		</thead>
 		<tbody>

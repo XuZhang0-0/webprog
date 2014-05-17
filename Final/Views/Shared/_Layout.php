@@ -8,20 +8,23 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">-->
 
-    <title>Layout Page</title>
+    <title>Administration Interface</title>
 
     <!-- Bootstrap core CSS -->
     <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <style>
+    <style type="text/css">
     	body {
            padding-top: 50px;
         }
         .starter-template {
            padding: 40px 15px;
            text-align: center;
-        }
+			}
+           
+        .zx_top { margin-top:50px;}
+        .zx_margin10 { margin: 10px auto;}
     </style>
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
@@ -45,13 +48,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">Administration</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="Users.php">Users</a></li>
+            <li><a href="Products.php?action=edit">Products</a></li>
+            <li><a href="Supliers.php">Supplier</a></li>
+            <li><a href="Orders.php">Orders</a></li>
+            <li><a href="Contacts.php">Contacts</a></li>
+            <li><a href="Addresses.php">Addresses</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -63,12 +70,19 @@
 
     </div><!-- /.container -->
 
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
+	<div id="footer">
+      <div class="container zx_top divider ">
+        <p class="text-muted">Handmade Shop - 2014</p>
+      </div>
+    </div>
+    <!-- Bootstrap core JavaScript 
+    ================================================== 
+    <script src="../Content/js/jquery-1.11.1.min.js"></script>
+    -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    
     <?
         if(function_exists("JavaScripts")){
         	JavaScripts();
