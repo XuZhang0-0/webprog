@@ -6,23 +6,29 @@
 	@$format = $_REQUEST['format'];
 	
 	//Accounts::RequireLogin();
-
+	//$user = Accounts::RequireAdmin();
+	
 	switch ($action){
 		case 'new':
 			$view = 'edit';
 			break;
 		case 'edit':
-			$model = User::Get($_REQUEST['id']);
+			//$view = 'edit';
+			$model = Users::Get($_REQUEST['id']);
 			break;
 		case 'save':
 			$sub_action = empty($_REQUEST['id']) ? 'created' : 'updated';
-			//$errors = Users::Validate($_REQUEST);
+			$errors = Users::Validate($_REQUEST);
 			if(!$errors){
+				
 				$errors = Users::Save($_REQUEST);
+				
+				echo "<br><br><br><br><br><br><br>success2"; //debugging
+
 			}
-			// TODO validate
+			
 			if(!$errors){
-				// echo "success"; //debugging
+				 echo "<br>success3"; //debugging
 				header("Location: ?sub_action=$sub_action&id=$_REQUEST[id]");
 				die();
 				

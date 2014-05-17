@@ -8,6 +8,7 @@
 	@$category_id = $_REQUEST['category_id'];
 	$layout	= '_Layout';
 	
+	//print $format;
 	
 	switch ($action){
 		case 'new':
@@ -15,6 +16,7 @@
 			break;
 		case 'edit':
 			$model = Products::Get($_REQUEST['id']);
+			$view = 'index';
 			break;
 		case 'save':
 			$sub_action = empty($_REQUEST['id']) ? 'created' : 'updated';
@@ -45,7 +47,11 @@
 			break;
 		case 'categories':
 			$model = Products::GetCategories();
-			print_r($model);
+			//print_r($model);
+			break;
+		case 'list':
+			$layout = '_PublicLayout';
+			$view = 'list';
 			break;
 		case 'picture':
 			$img = $_REQUEST['img'];
@@ -55,7 +61,14 @@
 		case 'login':
 			Accounts::RequireLogin();
 			$layout = '_PublicLayout';
-			if($view == null) $view = 'home';
+			if($view == null) $view = 'home2';
+			//if($view == null) $view = 'login';
+			break;
+		case 'logout':
+			session_unset();
+			$user = null;
+			$view = 'list';
+			$layout = '_PublicLayout';
 			break;
 		case 'search':
 			$layout = '_PublicLayout';
@@ -64,7 +77,8 @@
 		default:
 			$layout = '_PublicLayout';
 			//if($view == null) $view = 'angular';
-			if($view == null) $view = 'home2';
+			//if($view == null) $view = 'home2';
+			if($view == null) $view = 'list';
 	}
 	
 	switch ($format) {
