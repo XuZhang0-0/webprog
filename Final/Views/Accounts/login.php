@@ -29,8 +29,11 @@
 }
 </style>
 
+<div class="container margin_zx">
+	
+	
 <div class="modal-header">
-	<a href="?" class="close" data-dismiss="modal" aria-hidden="true">&times;</a>
+	<a href="Products.php" class="close" data-dismiss="modal" aria-hidden="true">&times;</a>
 	<h4 class="modal-title">Login</h4>
 </div>
 
@@ -39,7 +42,7 @@
 	<li><b><?=$key?>:</b> <?=$value?></li>
 	<? endforeach; ?>
 </ul>
-<form method="post" class="my-horizontal col-sm-10" >
+<form method="post" class="my-horizontal col-sm-8" >
 	<div class="form-group <?if(isset($errors['email'])) echo 'has-error has-feedback' ?> ">
 		<label class="control-label" for="email">Email or Phone Number:</label>
 		<input class="required form-control" type="text" name="email" id="email" value="<?=$model['email']?>" placeholder="Email or Phone Number" />
@@ -60,16 +63,17 @@
 	
 	<div class="modal-footer">
 		<label class="control-label"></label>
-		<input class="btn btn-primary" type="submit" value="Login" />
-		<a href="?" data-dismiss="modal">Cancel</a>
+		<input class="btn btn-primary " type="submit" value="Login" />
+		<a href="?" data-dismiss="modal" >Cancel</a>
 	</div>
 </form>
-
+</div>
+<!--
 <div class="col-sm-2">
 	<button class="btn btn-primary" id="fb-login">Login with Facebook</button>
 	<img id="fb-picture" />
 </div>
-
+-->
 <? function JavaScripts(){ ?>
 	<script type="text/javascript">
 		$(function(){
