@@ -59,7 +59,11 @@
 		height: 30px;
 	}
 	.label-danger{ background-color: maroon; }
+	.margin_zx {margin-top : 52px !important; padding-top: 0}
 </style>
+
+<div class="container margin_zx"> 
+	
 <div ng-app="homepageApp">
 	
 	<div ng-view></div>
@@ -67,7 +71,7 @@
 	<script type="text/ng-template" id="list">
 		<div class="row">
 			<div class="col-sm-offset-4 col-sm-4 has-feedback zx_top " id="search">
-				<input ng-model="query" type="search" class="form-control pull-left" placeholder="Search Items">	
+				<input ng-model="query" type="search" class="form-control " placeholder="Search Items">	
 				<span class="glyphicon glyphicon-search form-control-feedback"></span>
 			</div>
 		</div>
@@ -85,31 +89,15 @@
 					</h3>
 					<p class="pull-right">${{item.Price}}</p>
 					
-					<a class="btn btn-success" data-bind="click: $root.addToCart">Purchase</a>
+					<a class="btn btn-success" data-bind="click: $root.addToCart" href="#/item/{{item.id}}">Details</a>
 				</div>
-				<!--
-				<div class="panel panel-info">
-					<div class="panel-heading">
-						<code class="pull-right">${{item.Price}}</code>
-						<h3 class="panel-title">
-							<a href="#/item/{{item.id}}">
-							{{item.Name}}	
-							</a>
-						</h3>
-					</div>
-					<div class="panel-body">
-						<img ng-src="{{item.Picture_Url}}" class="img-thumbnail pull-right" alt="140x140" style="width: 140px; height: 140px;" >
-						<p>{{item.Description}}</p>
-						<a class="btn btn-success">Purchase</a>
-					</div>
-				</div>-->
-				
+
 			</div>
 		</div>
 	</script>	
 	
 	<script type="text/ng-template" id="details">
-		<div class="panel panel-info">
+		<div class="panel panel-info zx_top">
 			<div class="panel-heading">
 				<code class="pull-right">${{item.Price}}</code>
 				<h3 class="panel-title">{{item.Name}}</h3>
@@ -117,7 +105,7 @@
 			<div class="panel-body">
 				<img ng-src="{{item.Picture_Url}}" class="img-thumbnail pull-right" >
 				<p>{{item.Description}}</p>
-				<a class="btn btn-success" data-bind="click: $root.addToCart">Purchase</a>
+				<a href="Products.php?action=search" class="btn btn-success">Return</a>
 			</div>
 		</div>
 	</script>
@@ -154,6 +142,8 @@
 	</ul>
 </script>
 
+
+</div>
 <? function JavaScripts(){ ?>
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0-beta.3/angular-route.js"></script>
