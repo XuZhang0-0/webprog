@@ -25,7 +25,7 @@
 	
 		}
 		
-		static public function Save($row)
+		static public function Save(&$row)
 		{
 			$conn = GetConnection();
 			
@@ -34,13 +34,13 @@
 			if(!empty($row['id'])){
 				$sql = "Update 2014Spring_Users
 				            Set FirstName = '$row2[FirstName]', LastName = '$row2[LastName]', 
-				                Password = '$row2[Passwork]', fbid = '$row2[fbid]', UserType = '$row2[UserType]'
+				                Password = '$row2[Password]', fbid = '$row2[fbid]', UserType = '$row2[UserType]'
 				        WHERE id = $row2[id]
 				        ";
 			}else{
 				$sql = "INSERT INTO 2014Spring_Users 
-			            (FirstName,LastName,Password,fbid,UserType) 
-			            VALUES ('$row2[FirstName]','$row2[LastName]','$row2[Passwork]','$row2[fbid]','$row2[UserType]')";
+			            (created_at,FirstName,LastName,Password,fbid,UserType) 
+			            VALUES (current_timestamp,'$row2[FirstName]','$row2[LastName]','$row2[Password]','$row2[fbid]','$row2[UserType]')";
 			}
 
 			//echo $sql; // for debugging

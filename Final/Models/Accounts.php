@@ -9,7 +9,7 @@ session_start();
 		public static function DoLogin($email, $password) {
 			$sql =" SELECT *
 					From 2014Spring_Users U 
-					Join 2014Spring_Contact_Methods CM on U.id=CM.User_Id
+					Join 2014Spring_Contact_Methods CM on U.id=CM.User_id
 					WHERE CM.Value = '$email'
 					";
 			$model = fetch_all($sql);
@@ -35,6 +35,9 @@ session_start();
 			if(!self::IsLoggedIn())
 			{
 				header("Location: Accounts.php?returnUrl=$_SERVER[PHP_SELF]");
+				die();
+			}
+			else{
 				die();
 			}
 		}
